@@ -1,3 +1,4 @@
+# Some constant for the training process
 EPOCHS = 1
 LEARNING_RATE = 5e-5
 BATCH_SIZE = 1024

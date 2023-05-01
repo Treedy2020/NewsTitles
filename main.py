@@ -26,6 +26,13 @@ from utils.constant import (
 
 
 def train(model_name:str):
+    """ The main training process for a model with model_name, the model files will save in the SAVE_PATH automaticlly.
+
+    Args:
+        model_name (str): the name for the model you wana do a fine-tuning which support 
+        sequence classification at doc https://paddlenlp.readthedocs.io/zh/latest/model_zoo/index.html#id1.
+        
+    """
     model = AutoModelForSequenceClassification.from_pretrained(model_name, num_classes=14)
     model = paddle.jit.to_static(model)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
